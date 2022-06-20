@@ -21,5 +21,34 @@ body {
     height: 80%;
     width: 90%;
     background-color: aqua;
+   
+}
+
+#landingSection > #container > #titleSection {
+    position: relative;
+    flex: 3;
+}
+
+#landingSection > #container > #titleSection > .wrapper {
+    position:absolute;
+    bottom: 5rem;
+    left: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+#titleSection > .wrapper > .degree {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+#titleSection > .wrapper > .cityDate > .cityName {
+    font-size: 2rem;
+    font-weight: 500;
     
+}
+
+#landingSection > #container > #infoSection {
+    flex: 2
 }
