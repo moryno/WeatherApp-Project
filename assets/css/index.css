@@ -3,5 +3,23 @@
     padding: 0;
 }
 body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#landingSection {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#landingSection > #container {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    width: 90%;
+    background-color: aqua;
     
 }
