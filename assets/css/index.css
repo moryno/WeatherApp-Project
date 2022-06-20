@@ -56,15 +56,17 @@ body {
     flex: 1.5;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    justify-content: space-evenly;
     box-sizing: border-box;
     padding: 1rem 2rem;
+    height: 100%;
 }
 
 #landingSection > #container > #infoSection > #form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 #landingSection > #container > #infoSection > #form > .location {
@@ -82,3 +84,31 @@ body {
     border: none;
     background-color: #d66c05;
 }
+
+#landingSection > #container > #infoSection > .cities {
+    margin-bottom: 1rem;
+}
+
+#landingSection > #container > #infoSection > .cities > h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+hr {
+  color: #9e9ea7;
+  margin-bottom: 1rem;
+}
+
+#landingSection > #container > #infoSection > .weatherDetails > .weatherDetailsTitle{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+#landingSection > #container > #infoSection > .weatherDetails > .details {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
