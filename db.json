@@ -1,0 +1,44 @@
+{
+    "weather": [
+      {
+        "id": 1,
+        "city": "London",
+        "humidity": 78,
+        "temperature": "15.56",
+        "windSpeed": 3.33,
+        "cloudy": 86
+      },
+      {
+        "id": 2,
+        "city": "Nairobi",
+        "humidity": 78,
+        "temperature": "15.56",
+        "windSpeed": 3.33,
+        "cloudy": 86
+      },
+      {
+        "id": 3,
+        "city": "Mombasa",
+        "humidity": 78,
+        "temperature": "15.56",
+        "windSpeed": 3.33,
+        "cloudy": 86
+      },
+      {
+        "id": 4,
+        "city": "New York",
+        "humidity": 78,
+        "temperature": "15.56",
+        "windSpeed": 3.33,
+        "cloudy": 86
+      },
+      {
+        "id": 5,
+        "city": "Paris",
+        "humidity": 78,
+        "temperature": "15.56",
+        "windSpeed": 3.33,
+        "cloudy": 86
+      }
+    ]
+}
