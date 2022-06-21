@@ -95,6 +95,12 @@ body {
     
 }
 
+::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
 #landingSection > #container > #infoSection > #form > .submit {
     cursor: pointer;
     padding:1.5rem;
