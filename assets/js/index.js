@@ -123,6 +123,24 @@ const renderWeather = (weatherData) => {
     `;
 }
 
+const cities = document.querySelectorAll(".cities h3");
+cities.forEach( city => city.addEventListener("click", ()=> displayWeather(city.textContent)))
+
+const displayWeather = (location) => {
+    const options = {
+        method: "GET",
+        headers: {
+            "X-RapidAPI-Key": "d8b0d12ba3msh38e30c06b42d375p1ba990jsne3b6255da171",
+            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com"
+        }
+    };
+    
+    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=metric`, options)
+        .then(res => res.json())
+        .then(weatherData => renderWeather(weatherData))
+        .catch(err => console.error(err));
+}
+
 
 init();
 
