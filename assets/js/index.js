@@ -29,6 +29,7 @@ const uploadDefaultWeather = (weatherData) => {
     const windSpeed = weatherData.wind.speed;
     const icon = weatherData.weather[0].icon;
     const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+    const weatherDescription = weatherData.weather[0].description;
     const date = calculateDate()
 
     defaultDetail.innerHTML = `
@@ -38,6 +39,7 @@ const uploadDefaultWeather = (weatherData) => {
         <p class="day">${date}</p>
         </div>
         <img src="${imageURL}" >
+        
     `;
 
     weatherDetails.innerHTML = `
@@ -99,6 +101,7 @@ const renderWeather = (weatherData) => {
     const windSpeed = weatherData.wind.speed;
     const icon = weatherData.weather[0].icon;
     const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+    const weatherDescription = weatherData.weather[0].description;
     const date = calculateDate();
 
     defaultDetail.innerHTML = `
@@ -109,7 +112,7 @@ const renderWeather = (weatherData) => {
         </div>
         <img src="${imageURL}" >
     `;
-
+    document.querySelector(".cityName").addEventListener("mouseover", () => console.log(weatherDescription))
     weatherDetails.innerHTML = `
         <h3 class="weatherDetailsTitle">Weather Details</h3>
         <div class="details">
