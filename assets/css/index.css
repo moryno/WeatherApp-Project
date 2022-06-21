@@ -47,7 +47,12 @@ body {
 #landingSection > #container > #titleSection > .wrapper > .cityDate > .cityName {
     font-size: 2rem;
     font-weight: 500;
+    letter-spacing: .2rem;
     
+}
+
+#landingSection > #container > #titleSection > .wrapper > .cityDate > .day {
+    font-size: 0.9rem;
 }
 
 /* ......................... Info Section .................................... */

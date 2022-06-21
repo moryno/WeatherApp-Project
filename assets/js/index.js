@@ -27,12 +27,13 @@ const uploadDefaultWeather = (weatherData) => {
     const cloudy = weatherData.clouds.all;
     const humidity = weatherData.main.humidity;
     const windSpeed = weatherData.wind.speed;
+    const date = calculateDate()
 
     defaultDetail.innerHTML = `
         <h1 class="degree">${Math.floor(temp)}°</h1>
         <div class="cityDate">
         <h1 class="cityName">${city}</h1>
-        <p class="day">13:39-Monday, 9 Sep '19</p>
+        <p class="day">${date}</p>
         </div>
     `;
 
@@ -93,12 +94,12 @@ const renderWeather = (weatherData) => {
     const cloudy = weatherData.clouds.all;
     const humidity = weatherData.main.humidity;
     const windSpeed = weatherData.wind.speed;
-
+    const date = calculateDate()
     defaultDetail.innerHTML = `
         <h1 class="degree">${Math.floor(temp)}°</h1>
         <div class="cityDate">
         <h1 class="cityName">${city}</h1>
-        <p class="day">13:39-Monday, 9 Sep '19</p>
+        <p class="day">${date}</p>
         </div>
     `;
 
@@ -141,6 +142,24 @@ const displayWeather = (location) => {
         .catch(err => console.error(err));
 }
 
+const calculateDate = () => {
+    const date = new Date();
+    const getDate = date.getDate();
+    const day = date.getDay();
+    const daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+    const today = daylist[day];
+    const getMonth = date.getMonth();
+    const monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const month = monthList[getMonth].slice(0,3);
+    const year = date.getFullYear().toString().slice(-2);
+    let hour = date.getHours();
+    hour = ('0' + hour).slice(-2);
+    let minute = date.getMinutes();
+    minute = ('0' + minute).slice(-2);
+    let hourMin = `${hour}:${minute}`
+
+    return  `${hourMin} - ${today}, ${getDate} ${month} '${year}`
+}
 
 init();
 
