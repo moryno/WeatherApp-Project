@@ -19,7 +19,8 @@ const fetchDefaultData = () => {
 
 const uploadDefaultWeather = (weatherData) => {
     const defaultDetail = document.querySelector(".wrapper");
-    const weatherDetails = document.querySelector(".weatherDetails")
+    const weatherDetails = document.querySelector(".weatherDetails");
+    const descriptionWrapper =  document.querySelector(".weatherDescription");
 
     const temp = weatherData.main.temp;
     const city = weatherData.name;
@@ -41,7 +42,11 @@ const uploadDefaultWeather = (weatherData) => {
         <img src="${imageURL}" >
         
     `;
-
+    descriptionWrapper.innerHTML = `
+        <h1>Description:</h1>
+        <h2>The current weather is</h2>
+        <h2>${weatherDescription}</h2>
+    `;
     weatherDetails.innerHTML = `
         <h3 class="weatherDetailsTitle">Weather Details</h3>
         <div class="details">
@@ -61,6 +66,12 @@ const uploadDefaultWeather = (weatherData) => {
         <p>${feelsLikeTemp}<strong>°</strong></p>
         </div>
     `;
+
+    document.querySelector(".cityName").addEventListener("mouseover", () => {
+        onMouseOver();
+        setTimeout( ()=> {descriptionWrapper.style.display = "none"}, 1500)
+    });
+    
 }
 
 const form = document.querySelector("#form");
@@ -92,6 +103,7 @@ const searchWeather = (city) =>{
 const renderWeather = (weatherData) => {
     const defaultDetail = document.querySelector(".wrapper");
     const weatherDetails = document.querySelector(".weatherDetails")
+    const descriptionWrapper =  document.querySelector(".weatherDescription");
 
     const temp = weatherData.main.temp;
     const city = weatherData.name;
@@ -112,7 +124,13 @@ const renderWeather = (weatherData) => {
         </div>
         <img src="${imageURL}" >
     `;
-    document.querySelector(".cityName").addEventListener("mouseover", () => console.log(weatherDescription))
+
+   descriptionWrapper.innerHTML = `
+        <h1>Description:</h1>
+        <h2>The current weather is</h2>
+        <h2>${weatherDescription}</h2>
+   `;
+
     weatherDetails.innerHTML = `
         <h3 class="weatherDetailsTitle">Weather Details</h3>
         <div class="details">
@@ -132,6 +150,11 @@ const renderWeather = (weatherData) => {
         <p>${feelsLikeTemp}<strong>°</strong></p>
         </div>
     `;
+
+    document.querySelector(".cityName").addEventListener("mouseover", () => {
+        onMouseOver();
+        setTimeout( ()=> {descriptionWrapper.style.display = "none"}, 1500)
+    });
 }
 
 const cities = document.querySelectorAll(".cities h3");
@@ -169,18 +192,11 @@ const calculateDate = () => {
     let hourMin = `${hour}:${minute}`
 
     return  `${hourMin} - ${today}, ${getDate} ${month} '${year}`
+};
+
+const onMouseOver = () => {
+    document.querySelector(".weatherDescription").style.display = "block";
 }
 
+
 init();
-
-
-// const temp = weatherData.main.temp;
-// const feelsLikeTemp = weatherData.main.feels_like;
-// const weatherDescription = weatherData.weather[0].description;
-// const humidity = weatherData.main.humidity;
-// const visibility = weatherData.visibility;
-// const windSpeed = weatherData.wind.speed;
-
-
-
-// const url = "https://api.openweathermap.org/data/2.5/weather?q="+query+"&units="+units+"&appid="+apiKey;

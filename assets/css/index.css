@@ -62,7 +62,35 @@ body {
     font-size: 0.9rem;
 }
 
+#landingSection > #container > #titleSection > .weatherDescription{
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    border-radius: 0.5em;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(2, 34, 53, 0.3);
+    bottom: 22%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    display: none;
+    
 
+}
+
+#landingSection > #container > #titleSection > .weatherDescription h1,h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    opacity: 0.7;
+    color: #fcfdfd;
+}
+
+#landingSection > #container > #titleSection > .weatherDescription h1 {
+    
+    font-size: 1.3rem;
+}
 
 /* ......................... Info Section .................................... */
 
@@ -171,27 +199,3 @@ hr {
     font-weight: 400;
 }
 
-.checkout-payment{
-    position: absolute;
-    width: 300px;
-    text-align: center;
-    border-radius: 0.5em;    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(2, 34, 53, 0.3);
-    bottom: 22%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    /* display: none; */
-    
-
-}
-
-.checkout-payment h2{
-    font-size: 1.2rem;
-    font-weight: 400;
-    padding: 0.5rem 0;
-    opacity: 0.7;
-    color: #fcfdfd;
-}
