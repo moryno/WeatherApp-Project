@@ -27,6 +27,8 @@ const uploadDefaultWeather = (weatherData) => {
     const cloudy = weatherData.clouds.all;
     const humidity = weatherData.main.humidity;
     const windSpeed = weatherData.wind.speed;
+    const icon = weatherData.weather[0].icon;
+    const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
     const date = calculateDate()
 
     defaultDetail.innerHTML = `
@@ -35,6 +37,7 @@ const uploadDefaultWeather = (weatherData) => {
         <h1 class="cityName">${city}</h1>
         <p class="day">${date}</p>
         </div>
+        <img src="${imageURL}" >
     `;
 
     weatherDetails.innerHTML = `
@@ -94,13 +97,17 @@ const renderWeather = (weatherData) => {
     const cloudy = weatherData.clouds.all;
     const humidity = weatherData.main.humidity;
     const windSpeed = weatherData.wind.speed;
-    const date = calculateDate()
+    const icon = weatherData.weather[0].icon;
+    const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+    const date = calculateDate();
+
     defaultDetail.innerHTML = `
         <h1 class="degree">${Math.floor(temp)}°</h1>
         <div class="cityDate">
         <h1 class="cityName">${city}</h1>
         <p class="day">${date}</p>
         </div>
+        <img src="${imageURL}" >
     `;
 
     weatherDetails.innerHTML = `
@@ -170,9 +177,7 @@ init();
 // const humidity = weatherData.main.humidity;
 // const visibility = weatherData.visibility;
 // const windSpeed = weatherData.wind.speed;
-// const icon = weatherData.weather[0].icon;
-// const country = weatherData.sys.country
-// const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+
 
 
 // const url = "https://api.openweathermap.org/data/2.5/weather?q="+query+"&units="+units+"&appid="+apiKey;
