@@ -66,6 +66,7 @@ body {
     padding: 1rem 2rem;
     height: 100%;
     border-left: 1px solid;
+    position: relative;
 }
 
 #landingSection > #container > #infoSection > #form {
@@ -81,15 +82,25 @@ body {
     border-bottom: 1px solid #9e9ea7;
     background-color: inherit;
     outline: none;
+    
 }
 
 #landingSection > #container > #infoSection > #form > .submit {
     cursor: pointer;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding:1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     background-color: #d66c05;
+    font-size: 1.4rem;
+    font-weight: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
+
+
 
 #landingSection > #container > #infoSection > .cities {
     margin-bottom: 1rem;

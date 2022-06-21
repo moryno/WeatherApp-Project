@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/889562c6d8.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Roboto:wght@100;300;400;500;700;900&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -15,13 +19,7 @@
     <section id="landingSection">
       <div id="container">
         <div id="titleSection">
-          <div class="wrapper">
-            <h1 class="degree">16°</h1>
-            <div class="cityDate">
-              <h1 class="cityName">London</h1>
-              <p class="day">13:39-Monday, 9 Sep '19</p>
-            </div>
-          </div>
+          <div class="wrapper"></div>
         </div>
         <div id="infoSection">
           <form id="form">
@@ -31,7 +29,9 @@
               class="location"
               placeholder="Another location"
             />
-            <button class="submit" type="submit">Search</button>
+            <button class="submit" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
           </form>
           <div class="cities">
             <h3>London</h3>
@@ -40,25 +40,7 @@
             <h3>Paris</h3>
           </div>
           <hr />
-          <div class="weatherDetails">
-            <h3 class="weatherDetailsTitle">Weather Details</h3>
-            <div class="details">
-              <p>Cloudy</p>
-              <p>86%</p>
-            </div>
-            <div class="details">
-              <p>Humidity</p>
-              <p>66%</p>
-            </div>
-            <div class="details">
-              <p>Wind</p>
-              <p>8km/h</p>
-            </div>
-            <div class="details">
-              <p>Feels Like</p>
-              <p>16%</p>
-            </div>
-          </div>
+          <div class="weatherDetails"></div>
         </div>
       </div>
     </section>
