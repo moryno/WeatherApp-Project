@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    color: #9e9ea7;
+    
 }
 
 /* ......................... Title Section .................................... */
@@ -30,6 +30,7 @@ body {
 
 #landingSection > #container > #titleSection {
     position: relative;
+    color: #f2f2f1;
     flex: 3;
 }
 
@@ -70,9 +71,10 @@ body {
     box-sizing: border-box;
     padding: 1rem 2rem;
     height: 100%;
-    background: linear-gradient(135deg, #111518 90%,#f5eeea);
+    color: #fcfdfd;
+    /* background: linear-gradient(135deg, #111518 90%,#f5eeea); */
     position: relative;
-    /* background-color: rgba(17,21,24,0.9); */
+    background-color: rgba(2, 34, 53, 0.7);
 }
 
 #landingSection > #container > #infoSection > #form {
@@ -86,8 +88,9 @@ body {
     padding: 0.5rem 2.5rem 0.5rem 0;
     border: none;
     border-bottom: 1px solid #9e9ea7;
-    background-color: inherit;
+    background-color: transparent;
     outline: none;
+    color: #fcfdfd;
     
 }
 
@@ -115,8 +118,9 @@ body {
 
 #landingSection > #container > #infoSection > .cities > h3 {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
     padding: 0.5rem 0;
+    opacity: 0.5;
     cursor: pointer;
     
 }
@@ -129,6 +133,8 @@ hr {
 #landingSection > #container > #infoSection > .weatherDetails > .weatherDetailsTitle{
     margin-bottom: 1rem;
     font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
 }
 #landingSection > #container > #infoSection > .weatherDetails > .details {
     display: flex;
@@ -137,3 +143,8 @@ hr {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#landingSection > #container > #infoSection > .weatherDetails > .details > p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
