@@ -1,3 +1,5 @@
+
+
 const init = () => {
     fetchWeatherData()
 }
@@ -88,7 +90,7 @@ function handleSubmit (event){
 const cities = document.querySelectorAll(".cities h3");
 cities.forEach( city => city.addEventListener("click", ()=> fetchWeatherData(city.textContent)))
 
-
+// Function to get date
 const calculateDate = () => {
     const date = new Date();
     const getDate = date.getDate();
@@ -113,5 +115,4 @@ const onMouseOver = () => {
 }
 
 
-init();
-
+document.addEventListener("DOMContentLoaded", init)
