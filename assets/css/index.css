@@ -37,6 +37,14 @@ body {
     flex: 3;
 }
 
+#landingSection > #container > #titleSection > p {
+   position: absolute;
+   top: 10%;
+   left: 10%;
+   font-weight: 500;
+   font-size: 0.7rem;
+}
+
 #landingSection > #container > #titleSection > .wrapper {
     position:absolute;
     bottom: 5rem;
@@ -172,6 +180,7 @@ body {
     transition: all ease-in-out;
     font-weight: 500;
     opacity: 0.8;
+    background-color: rgba(27, 84, 118, 0.7);
 
 }
 
@@ -199,3 +208,68 @@ hr {
     font-weight: 400;
 }
 
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 480px) {
+   
+    #landingSection > #container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    #landingSection > #container > #titleSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    }
+
+    #landingSection > #container > #titleSection > p {
+        display: none;
+     }
+ 
+     #landingSection > #container > #titleSection > .wrapper > img {
+        display: none;
+    }
+ 
+    
+    #landingSection > #container > #infoSection {
+        position:unset;
+       
+    }
+    
+    #landingSection > #container > #infoSection > #form {
+        position: absolute;
+        top: 2%;
+        width: 80%;
+    }
+  
+    #landingSection > #container > #infoSection > #form > .location {
+        padding: 0.5rem 2.5rem 0.5rem 0;
+        border: none;
+        border-bottom: 1px solid #9e9ea7;
+        background-color: transparent;
+        outline: none;
+        color: #fff;
+        
+    }
+    
+    ::placeholder {
+        opacity: 1;
+        color: #fcfdfd;
+    }
+
+    #landingSection > #container > #infoSection > #form > .submit {
+        padding:1rem;
+        position: relative;
+        
+    }
+
+
+
+    
+
+ 
+ 
+ }
