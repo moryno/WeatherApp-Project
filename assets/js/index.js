@@ -1,8 +1,8 @@
 const init = () => {
-    fetchDefaultData()
+    fetchWeatherData()
 }
 
-const fetchDefaultData = () => {
+const fetchWeatherData = (location = "Nairobi") => {
     const options = {
         method: 'GET',
         headers: {
@@ -11,13 +11,13 @@ const fetchDefaultData = () => {
         }
     };
     
-    fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=Nairobi&units=metric", options)
+    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=metric`, options)
         .then(res => res.json())
-        .then(weatherData => uploadDefaultWeather(weatherData))
+        .then(weatherData => uploadWeather(weatherData))
         .catch(err => console.error(err));
 }
 
-const uploadDefaultWeather = (weatherData) => {
+const uploadWeather = (weatherData) => {
     const defaultDetail = document.querySelector(".wrapper");
     const weatherDetails = document.querySelector(".weatherDetails");
     const descriptionWrapper =  document.querySelector(".weatherDescription");
@@ -80,100 +80,14 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit (event){
     event.preventDefault();
     const cityInput = event.target.location.value;
-    searchWeather(cityInput);
+    fetchWeatherData(cityInput);
     form.reset();
 }
 
-const searchWeather = (city) =>{
-    const options = {
-        method: "GET",
-        headers: {
-            "X-RapidAPI-Key": "d8b0d12ba3msh38e30c06b42d375p1ba990jsne3b6255da171",
-            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com"
-        }
-    };
-    
-    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${city}&units=metric`, options)
-        .then(res => res.json())
-        .then(weatherData => renderWeather(weatherData))
-        .catch(err => console.error(err));
-
-}
-
-const renderWeather = (weatherData) => {
-    const defaultDetail = document.querySelector(".wrapper");
-    const weatherDetails = document.querySelector(".weatherDetails")
-    const descriptionWrapper =  document.querySelector(".weatherDescription");
-
-    const temp = weatherData.main.temp;
-    const city = weatherData.name;
-    const feelsLikeTemp = weatherData.main.feels_like;
-    const cloudy = weatherData.clouds.all;
-    const humidity = weatherData.main.humidity;
-    const windSpeed = weatherData.wind.speed;
-    const icon = weatherData.weather[0].icon;
-    const imageURL = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
-    const weatherDescription = weatherData.weather[0].description;
-    const date = calculateDate();
-
-    defaultDetail.innerHTML = `
-        <h1 class="degree">${Math.floor(temp)}°</h1>
-        <div class="cityDate">
-        <h1 class="cityName">${city}</h1>
-        <p class="day">${date}</p>
-        </div>
-        <img src="${imageURL}" >
-    `;
-
-   descriptionWrapper.innerHTML = `
-        <h1>Description:</h1>
-        <h2>The current weather is</h2>
-        <h2>${weatherDescription}</h2>
-   `;
-
-    weatherDetails.innerHTML = `
-        <h3 class="weatherDetailsTitle">Weather Details</h3>
-        <div class="details">
-        <p>Cloudy</p>
-        <p>${cloudy}%</p>
-        </div>
-        <div class="details">
-        <p>Humidity</p>
-        <p>${humidity}%</p>
-        </div>
-        <div class="details">
-        <p>Wind</p>
-        <p>${windSpeed}m/s</p>
-        </div>
-        <div class="details">
-        <p>Feels Like</p>
-        <p>${feelsLikeTemp}<strong>°</strong></p>
-        </div>
-    `;
-
-    document.querySelector(".cityName").addEventListener("mouseover", () => {
-        onMouseOver();
-        setTimeout( ()=> {descriptionWrapper.style.display = "none"}, 1500)
-    });
-}
-
+// Display weather when names of cities on the page are clicked
 const cities = document.querySelectorAll(".cities h3");
-cities.forEach( city => city.addEventListener("click", ()=> displayWeather(city.textContent)))
+cities.forEach( city => city.addEventListener("click", ()=> fetchWeatherData(city.textContent)))
 
-const displayWeather = (location) => {
-    const options = {
-        method: "GET",
-        headers: {
-            "X-RapidAPI-Key": "d8b0d12ba3msh38e30c06b42d375p1ba990jsne3b6255da171",
-            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com"
-        }
-    };
-    
-    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=metric`, options)
-        .then(res => res.json())
-        .then(weatherData => renderWeather(weatherData))
-        .catch(err => console.error(err));
-}
 
 const calculateDate = () => {
     const date = new Date();
@@ -200,3 +114,4 @@ const onMouseOver = () => {
 
 
 init();
+
