@@ -276,7 +276,11 @@ hr {
     }
 
 
-
+    #landingSection > #container > #infoSection {
+       
+        flex-direction:column-reverse;
+        
+    }
     
 
  
