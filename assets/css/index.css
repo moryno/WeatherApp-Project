@@ -229,8 +229,17 @@ hr {
         display: none;
      }
  
-     #landingSection > #container > #titleSection > .wrapper > img {
-        display: none;
+     #landingSection > #container > #titleSection > .wrapper  {
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+
+    
+    #landingSection > #container > #titleSection > .wrapper > img {
+        position:absolute;
+        left: 60%;
+        top: -10%;
     }
  
     
@@ -242,7 +251,7 @@ hr {
     #landingSection > #container > #infoSection > #form {
         position: absolute;
         top: 2%;
-        width: 80%;
+        width: 90%;
     }
   
     #landingSection > #container > #infoSection > #form > .location {
