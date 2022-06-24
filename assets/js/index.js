@@ -5,15 +5,9 @@ const init = () => {
 }
 
 const fetchWeatherData = (location = "Nairobi") => {
-    const options = {
-        method: 'GET',
-        headers: {
-            "X-RapidAPI-Key": "d8b0d12ba3msh38e30c06b42d375p1ba990jsne3b6255da171",
-            "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com"
-        }
-    };
-    
-    fetch(`https://community-open-weather-map.p.rapidapi.com/weather?q=${location}&units=metric`, options)
+    const apiKey ="7dc19c68d1fc7adedac70203f767688e";
+       
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`)
         .then(res => res.json())
         .then(weatherData => uploadWeather(weatherData))
         .catch(err => console.error(err));
@@ -116,3 +110,4 @@ const onMouseOver = () => {
 
 
 document.addEventListener("DOMContentLoaded", init)
+
