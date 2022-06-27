@@ -2,7 +2,9 @@
 
 ## By Maurice Nganga
 
-![Weathwe App Landing](./assets/images/screencapture-127-0-0-1-5500-2022-06-21-21_07_52.png)
+![Weather App Landing](./assets/images/screencapture-127-0-0-1-5500-2022-06-21-21_07_52.png)
+
+[Blog](https://medium.com/@mauricenganga41/weather-app-d714df90b90e)
 
 ## Weather App
 
